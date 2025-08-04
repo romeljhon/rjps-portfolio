@@ -36,41 +36,41 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="w-full py-24 md:py-32 bg-secondary">
+    <section id="projects" className="w-full py-24 md:py-32 bg-secondary/50">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Featured Projects</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              A selection of my work. Each project is a testament to my commitment to quality and my passion for development.
-            </p>
-          </div>
+        <div className="space-y-4 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Featured Projects</h2>
+          <p className="max-w-[900px] mx-auto text-muted-foreground md:text-xl/relaxed">
+            A selection of my work. Each project is a testament to my commitment to quality and my passion for development.
+          </p>
         </div>
         <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3">
           {projects.map((project) => (
-            <Card key={project.title} className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card">
+            <Card key={project.title} className="group overflow-hidden rounded-lg transition-all duration-300 hover:shadow-xl bg-card border">
               <CardHeader className="p-0">
-                <Image
-                  src={project.image}
-                  width={600}
-                  height={400}
-                  alt={project.title}
-                  className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  data-ai-hint={project.dataAiHint}
-                />
+                 <Link href={project.liveUrl} className="block overflow-hidden">
+                    <Image
+                      src={project.image}
+                      width={600}
+                      height={400}
+                      alt={project.title}
+                      className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={project.dataAiHint}
+                    />
+                 </Link>
               </CardHeader>
-              <CardContent className="p-6 space-y-4">
-                <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-                <div className="flex flex-wrap gap-2">
+              <CardContent className="p-6 space-y-3">
+                <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
+                 <div className="flex flex-wrap gap-2">
                   {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                 </div>
+                <CardDescription>{project.description}</CardDescription>
               </CardContent>
-              <CardFooter className="p-6 flex justify-between">
-                <Button asChild variant="outline">
+              <CardFooter className="p-6 flex justify-start gap-4">
+                <Button asChild>
                   <Link href={project.liveUrl} target="_blank">Live Demo</Link>
                 </Button>
-                <Button asChild variant="ghost">
+                <Button asChild variant="secondary">
                   <Link href={project.sourceUrl} target="_blank">Source Code</Link>
                 </Button>
               </CardFooter>

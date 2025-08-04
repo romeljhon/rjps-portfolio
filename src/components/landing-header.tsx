@@ -32,14 +32,14 @@ export function LandingHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
         isScrolled ? 'border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="#" className="flex items-center gap-2" onClick={(e) => handleLinkClick(e, '#home')}>
           <Code className="h-6 w-6 text-primary" />
-          <span className="font-headline text-xl font-bold">Romel Jhon Salvaleon</span>
+          <span className="text-lg font-semibold">Romel Jhon Salvaleon</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
@@ -47,7 +47,7 @@ export function LandingHeader() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               {link.label}
             </Link>
@@ -65,7 +65,7 @@ export function LandingHeader() {
             <div className="grid gap-4 p-4">
               <Link href="#" className="flex items-center gap-2" onClick={(e) => handleLinkClick(e, '#home')}>
                 <Code className="h-6 w-6 text-primary" />
-                <span className="font-headline text-xl font-bold">Romel Jhon Salvaleon</span>
+                <span className="text-lg font-bold">Romel Jhon Salvaleon</span>
               </Link>
               <nav className="grid gap-2">
                 {navLinks.map((link) => (

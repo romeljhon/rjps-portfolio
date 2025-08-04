@@ -10,25 +10,23 @@ export function Hero() {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
   };
   return (
-    <section id="home" className="w-full py-24 md:py-32 lg:py-40 xl:py-48">
+    <section id="home" className="w-full py-32 md:py-48 lg:py-56 xl:py-64">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-          <div className="flex flex-col justify-center space-y-4">
-            <div className="space-y-2">
-              <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none">
-                Creative Web Developer
-              </h1>
-              <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                I craft beautiful and functional websites, bringing ideas to life with code.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
+          <div className="space-y-6">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+              Romel Jhon Salvaleon
+            </h1>
+            <p className="max-w-[600px] text-lg text-muted-foreground md:text-xl">
+              A passionate Web Developer creating seamless and engaging digital experiences. I bring ideas to life with clean code and modern design.
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg">
                 <Link href="#contact" onClick={handleScrollToContact}>
                   Get in Touch
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="secondary" size="lg">
                 <Link href="#projects">View My Work</Link>
               </Button>
             </div>
@@ -38,8 +36,9 @@ export function Hero() {
             alt="Hero Portrait"
             width={600}
             height={600}
-            className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full lg:order-last"
+            className="mx-auto aspect-square overflow-hidden rounded-full object-cover sm:w-full"
             data-ai-hint="portrait developer"
+            priority
           />
         </div>
       </div>

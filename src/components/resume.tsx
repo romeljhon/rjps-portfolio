@@ -39,68 +39,66 @@ const skills = [
 
 export function Resume() {
   return (
-    <section id="resume" className="w-full py-24 md:py-32 bg-secondary">
+    <section id="resume" className="w-full py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Interactive Resume</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        <div className="space-y-4 text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Interactive Resume</h2>
+            <p className="max-w-[900px] mx-auto text-muted-foreground md:text-xl/relaxed">
               Explore my professional journey, education, and technical skills.
             </p>
-          </div>
         </div>
         <div className="mx-auto max-w-4xl py-12">
-          <Accordion type="single" collapsible defaultValue="item-1">
+          <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-xl font-headline">
+              <AccordionTrigger className="text-2xl font-bold">
                 <div className="flex items-center gap-3">
                   <Briefcase className="h-6 w-6" /> Work Experience
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="space-y-6 pl-9">
+                <div className="space-y-8 pt-4 pl-9">
                   {experience.map((exp, index) => (
-                    <div key={index} className="space-y-1">
-                      <h3 className="font-bold text-lg">{exp.role}</h3>
+                    <div key={index} className="space-y-2">
+                      <h3 className="font-semibold text-xl">{exp.role}</h3>
                       <p className="font-medium text-primary">{exp.company}</p>
                       <p className="text-sm text-muted-foreground">{exp.period}</p>
-                      <p className="pt-1">{exp.description}</p>
+                      <p className="pt-1 text-base">{exp.description}</p>
                     </div>
                   ))}
                 </div>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger className="text-xl font-headline">
+              <AccordionTrigger className="text-2xl font-bold">
                 <div className="flex items-center gap-3">
                   <GraduationCap className="h-6 w-6" /> Education
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="space-y-6 pl-9">
+                <div className="space-y-8 pt-4 pl-9">
                   {education.map((edu, index) => (
-                    <div key={index} className="space-y-1">
-                      <h3 className="font-bold text-lg">{edu.degree}</h3>
+                    <div key={index} className="space-y-2">
+                      <h3 className="font-semibold text-xl">{edu.degree}</h3>
                       <p className="font-medium text-primary">{edu.institution}</p>
                       <p className="text-sm text-muted-foreground">{edu.period}</p>
-                      <p className="pt-1">{edu.description}</p>
+                      <p className="pt-1 text-base">{edu.description}</p>
                     </div>
                   ))}
                 </div>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger className="text-xl font-headline">
+              <AccordionTrigger className="text-2xl font-bold">
                 <div className="flex items-center gap-3">
                   <Code2 className="h-6 w-6" /> Skills
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-4 pl-9">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-4 pl-9 pt-6">
                     {skills.map(skill => (
                         <div key={skill.name} className="flex items-center gap-3">
                             {skill.icon}
-                            <span>{skill.name}</span>
+                            <span className="font-medium">{skill.name}</span>
                         </div>
                     ))}
                 </div>
