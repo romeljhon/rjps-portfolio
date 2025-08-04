@@ -38,7 +38,7 @@ export function LandingHeader() {
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
         <Link href="#" className="flex items-center gap-2" onClick={(e) => handleLinkClick(e, '#home')}>
           <Code className="h-6 w-6 text-primary" />
-          <span className="font-headline text-xl font-bold">DevFolio</span>
+          <span className="font-headline text-xl font-bold">Romel Jhon Salvaleon</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
@@ -63,7 +63,7 @@ export function LandingHeader() {
             <div className="grid gap-4 p-4">
               <Link href="#" className="flex items-center gap-2" onClick={(e) => handleLinkClick(e, '#home')}>
                 <Code className="h-6 w-6 text-primary" />
-                <span className="font-headline text-xl font-bold">DevFolio</span>
+                <span className="font-headline text-xl font-bold">Romel Jhon Salvaleon</span>
               </Link>
               <nav className="grid gap-2">
                 {navLinks.map((link) => (
