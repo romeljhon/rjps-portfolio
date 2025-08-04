@@ -1,42 +1,7 @@
 
 'use server';
 
-import { generateProjectDescription } from '@/ai/flows/generate-project-description';
 import { z } from 'zod';
-
-const generateDescriptionSchema = z.object({
-  projectUrl: z.string().url({ message: 'Please enter a valid URL.' }),
-});
-
-export async function generateDescriptionAction(
-  prevState: { message: string; summary?: string; errors?: any },
-  formData: FormData
-) {
-  const validatedFields = generateDescriptionSchema.safeParse({
-    projectUrl: formData.get('projectUrl'),
-  });
-
-  if (!validatedFields.success) {
-    return {
-      message: 'Invalid URL submitted.',
-      errors: validatedFields.error.flatten().fieldErrors,
-    };
-  }
-
-  try {
-    const result = await generateProjectDescription({ projectUrl: validatedFields.data.projectUrl });
-    if (result.summary) {
-        return { message: 'success', summary: result.summary };
-    } else {
-        return { message: 'Could not generate a summary. The URL might be inaccessible or invalid.' };
-    }
-  } catch (error) {
-    console.error(error);
-    return {
-      message: 'An unexpected error occurred. Please try again later.',
-    };
-  }
-}
 
 const contactSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),

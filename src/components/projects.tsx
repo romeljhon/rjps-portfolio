@@ -3,8 +3,6 @@ import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { ProjectDescriptionGenerator } from './project-description-generator';
 
 const projects = [
   {
@@ -79,7 +77,6 @@ export function Projects() {
             </Card>
           ))}
         </div>
-        <ProjectDescriptionGenerator />
       </div>
     </section>
   );
