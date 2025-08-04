@@ -1,13 +1,13 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useEffect, useRef } from 'react';
+import { useFormStatus } from 'react-dom';
 import { submitContactFormAction } from '@/app/actions';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { useEffect, useRef } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Send } from 'lucide-react';
 
@@ -22,7 +22,7 @@ function SubmitButton() {
 
 export function Contact() {
   const initialState = { message: '', errors: {}, success: false };
-  const [state, formAction] = useFormState(submitContactFormAction, initialState);
+  const [state, formAction] = useActionState(submitContactFormAction, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -54,7 +54,7 @@ export function Contact() {
           <Card>
             <CardHeader>
               <CardTitle>Contact Me</CardTitle>
-              <CardDescription>Fill out the form below and I&apos;ll get back to you as soon as possible.</CardDescription>
+              <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
             </CardHeader>
             <form ref={formRef} action={formAction}>
               <CardContent className="space-y-4">

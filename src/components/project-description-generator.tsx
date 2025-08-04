@@ -1,13 +1,13 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useEffect, useRef, useState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { generateDescriptionAction } from '@/app/actions';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { useEffect, useRef, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Wand2, Copy, Check } from 'lucide-react';
 
@@ -22,7 +22,7 @@ function SubmitButton() {
 
 export function ProjectDescriptionGenerator() {
   const initialState = { message: '', summary: '' };
-  const [state, formAction] = useFormState(generateDescriptionAction, initialState);
+  const [state, formAction] = useActionState(generateDescriptionAction, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const [copied, setCopied] = useState(false);
