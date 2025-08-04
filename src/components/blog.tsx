@@ -32,7 +32,7 @@ const blogPosts = [
 
 export function Blog() {
   return (
-    <section id="blog" className="w-full py-24 md:py-32 bg-card">
+    <section id="blog" className="w-full py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -44,7 +44,7 @@ export function Blog() {
         </div>
         <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3">
           {blogPosts.map((post) => (
-            <Card key={post.title} className="group flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <Card key={post.title} className="group flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card">
                 <CardHeader className="p-0">
                   <Link href={post.slug}>
                     <Image
