@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { ThemeToggle } from './theme-toggle';
 
 const navLinks = [
   { href: '#projects', label: 'Projects' },
@@ -51,6 +52,7 @@ export function LandingHeader() {
               {link.label}
             </Link>
           ))}
+          <ThemeToggle />
         </nav>
         <Sheet>
           <SheetTrigger asChild>
@@ -77,6 +79,9 @@ export function LandingHeader() {
                   </Link>
                 ))}
               </nav>
+              <div className="pt-4">
+                <ThemeToggle />
+              </div>
             </div>
           </SheetContent>
         </Sheet>
