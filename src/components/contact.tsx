@@ -1,49 +1,11 @@
 'use client';
 
-import { useActionState, useEffect, useRef } from 'react';
-import { useFormStatus } from 'react-dom';
-import { submitContactFormAction } from '@/app/actions';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
-import { Send } from 'lucide-react';
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" disabled={pending} className="w-full">
-      {pending ? 'Sending...' : <>Send Message <Send className="ml-2 h-4 w-4" /></>}
-    </Button>
-  );
-}
+import Link from 'next/link';
+import { Mail, Facebook, Linkedin } from 'lucide-react';
 
 export function Contact() {
-  const initialState = { message: '', errors: {}, success: false };
-  const [state, formAction] = useActionState(submitContactFormAction, initialState);
-  const { toast } = useToast();
-  const formRef = useRef<HTMLFormElement>(null);
-
-  useEffect(() => {
-    if (state.message) {
-      if (state.success) {
-        toast({
-          title: 'Success!',
-          description: state.message,
-        });
-        formRef.current?.reset();
-      } else if (state.message) {
-        toast({
-          variant: 'destructive',
-          title: 'Oops!',
-          description: state.message,
-        });
-      }
-    }
-  }, [state, toast]);
-
   return (
     <section id="contact" className="w-full py-24 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
@@ -55,36 +17,32 @@ export function Contact() {
             </p>
           </div>
         </div>
-        <div className="mx-auto w-full max-w-2xl py-12">
+        <div className="mx-auto w-full max-w-md py-12">
           <Card>
             <CardHeader>
               <CardTitle>Contact Me</CardTitle>
-              <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+              <CardDescription>You can reach me through these platforms.</CardDescription>
             </CardHeader>
-            <form ref={formRef} action={formAction}>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" name="name" placeholder="Your Name" required />
-                    {state.errors?.name && <p className="text-sm font-medium text-destructive">{state.errors.name[0]}</p>}
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" name="email" type="email" placeholder="your@email.com" required />
-                     {state.errors?.email && <p className="text-sm font-medium text-destructive">{state.errors.email[0]}</p>}
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" name="message" placeholder="Your message..." required rows={5} />
-                  {state.errors?.message && <p className="text-sm font-medium text-destructive">{state.errors.message[0]}</p>}
-                </div>
-              </CardContent>
-              <CardFooter>
-                <SubmitButton />
-              </CardFooter>
-            </form>
+            <CardContent className="space-y-4">
+               <Button asChild className="w-full" variant="outline">
+                 <Link href="mailto:romeljhonsalvaleon@gmail.com" target="_blank">
+                   <Mail className="mr-2 h-5 w-5" />
+                   Gmail
+                 </Link>
+               </Button>
+               <Button asChild className="w-full" variant="outline">
+                 <Link href="https://www.facebook.com/romel.jhon.5/" target="_blank">
+                   <Facebook className="mr-2 h-5 w-5" />
+                   Facebook
+                 </Link>
+               </Button>
+               <Button asChild className="w-full" variant="outline">
+                 <Link href="https://www.linkedin.com/in/romel-jhon-salvaleon-1b1b1b1b1/" target="_blank">
+                   <Linkedin className="mr-2 h-5 w-5" />
+                   LinkedIn
+                 </Link>
+               </Button>
+            </CardContent>
           </Card>
         </div>
       </div>
