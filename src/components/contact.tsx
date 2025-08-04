@@ -28,14 +28,19 @@ export function Contact() {
 
   useEffect(() => {
     if (state.message) {
-      toast({
-        variant: state.success ? 'default' : 'destructive',
-        title: state.success ? 'Success!' : 'Oops!',
-        description: state.message,
-      });
-    }
-    if (state.success) {
-      formRef.current?.reset();
+      if (state.success) {
+        toast({
+          title: 'Success!',
+          description: state.message,
+        });
+        formRef.current?.reset();
+      } else if (state.message) {
+        toast({
+          variant: 'destructive',
+          title: 'Oops!',
+          description: state.message,
+        });
+      }
     }
   }, [state, toast]);
 
