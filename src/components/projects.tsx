@@ -30,8 +30,8 @@ const projects = [
   {
     title: 'Portfolio Website',
     description: 'My personal portfolio site built to showcase my skills and projects, featuring this very AI description generator.',
-    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=600&h=400&fit=crop',
-    dataAiHint: 'portfolio website',
+    image: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=600&h=400&fit=crop',
+    dataAiHint: 'laptop code',
     tags: ['Next.js', 'Tailwind CSS', 'GenAI', 'Shadcn/UI'],
     liveUrl: '#',
     sourceUrl: '#',
