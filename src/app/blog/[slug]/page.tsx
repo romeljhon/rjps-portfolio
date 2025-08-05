@@ -1,5 +1,5 @@
 
-import { blogPosts } from '@/components/blog';
+import { blogPosts } from '@/lib/blog-data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
