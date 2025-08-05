@@ -33,12 +33,12 @@ export function Hero() {
             </div>
           </div>
           <Image
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&h=600&fit=crop"
-            alt="Hero Portrait"
+            src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=600&h=600&fit=crop"
+            alt="Laptop with code on screen"
             width={600}
             height={600}
             className="mx-auto aspect-square overflow-hidden rounded-full object-cover sm:w-full border-4 border-gray-300"
-            data-ai-hint="developer portrait"
+            data-ai-hint="laptop code"
             priority
           />
         </div>
