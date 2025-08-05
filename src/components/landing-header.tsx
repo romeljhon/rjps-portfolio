@@ -25,9 +25,9 @@ const Logo = ({ className }: { className?: string }) => (
       strokeLinejoin="round"
       className={className}
     >
-      <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-      <path d="M2 17l10 5 10-5"></path>
-      <path d="M2 12l10 5 10-5"></path>
+      <path d="M7 10.625l5-3.125 5 3.125-5 3.125-5-3.125z"></path>
+      <path d="M7 14.375l5-3.125 5 3.125-5 3.125-5-3.125z"></path>
+      <path d="M7 18.125l5-3.125 5 3.125-5 3.125-5-3.125z"></path>
     </svg>
 );
 
