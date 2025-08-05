@@ -12,7 +12,7 @@ const projects = [
   {
     title: 'Chrono Blog',
     description: 'A modern blogging platform with a clean interface, allowing users to create, read, and manage their posts seamlessly.',
-    image: '/chrono-blog.png',
+    image: '/img/Blog.jpeg',
     dataAiHint: 'blog writing',
     tags: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
     liveUrl: 'https://blog-ebon-three-81.vercel.app/',
