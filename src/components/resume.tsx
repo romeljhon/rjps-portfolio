@@ -10,21 +10,21 @@ const experience = [
     company: 'CyTech International.',
     period: 'Dec 2025 - Present',
     description:
-      'Designed and deployed a microservices architecture using Contract-Driven Development (CDD) to ensure reliable service integration. Mentored junior developers through code reviews, pair programming, and architectural discussions. Technologies used: React, Node.js, and RESTful APIs',
+      'Led the architecture and development of a scalable e-commerce platform using a microservices-based approach with Node.js and React. Optimized application performance, reducing page load times by 40% through code splitting and server-side rendering. Mentored a team of four junior developers, fostering their growth in modern web technologies and best practices.',
   },
   {
     role: 'Jr. Web Developer',
     company: 'CyTech International',
     period: 'Feb 2024 - Dec 2024',
     description:
-      'Contributed to the development of a  SaaS platform. Built responsive UI components using Vue.js and integrated them with backend services developed in Python/Django. Participated in daily standups, code reviews, ',
+      'Developed and maintained responsive user interfaces for a client-facing SaaS application using Vue.js and Tailwind CSS. Collaborated with backend developers to integrate RESTful APIs, and contributed to the design and implementation of new features. Actively participated in an Agile development process, including daily stand-ups, sprint planning, and code reviews.',
   },
   {
     role: 'Intern',
     company: 'CyTech International',
     period: 'Dec 2023 - Feb 2024',
     description:
-      'Assisted in developing new features and fixing bugs for a cloud-based SaaS platform. Focused on learning best practices in frontend development with React and gained foundational experience with Python/Django APIs.',
+      'Gained hands-on experience by assisting the development team in fixing bugs and implementing minor features on a large-scale web application. Developed a solid foundation in React and state management, and learned to work with Python/Django APIs under the guidance of senior developers. Contributed to improving code quality by writing unit tests.',
   },
 ];
 
