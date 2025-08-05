@@ -32,7 +32,7 @@ export function Hero() {
             </div>
           </div>
            <Image
-            src="https://placehold.co/600x600.png"
+            src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=600&h=600&fit=crop"
             alt="Hero Portrait"
             width={600}
             height={600}

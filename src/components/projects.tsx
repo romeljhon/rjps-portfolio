@@ -12,7 +12,7 @@ const projects = [
   {
     title: 'E-Commerce Platform',
     description: 'A full-featured e-commerce site with a modern frontend, robust backend, and secure payment processing.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=600&h=400&fit=crop',
     dataAiHint: 'commerce website',
     tags: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
     liveUrl: '#',
@@ -21,7 +21,7 @@ const projects = [
   {
     title: 'Task Management App',
     description: 'A collaborative task management application designed for teams to organize, track, and complete projects efficiently.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600&h=400&fit=crop',
     dataAiHint: 'task app',
     tags: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
     liveUrl: '#',
@@ -30,7 +30,7 @@ const projects = [
   {
     title: 'Portfolio Website',
     description: 'My personal portfolio site built to showcase my skills and projects, featuring this very AI description generator.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=600&h=400&fit=crop',
     dataAiHint: 'portfolio website',
     tags: ['Next.js', 'Tailwind CSS', 'GenAI', 'Shadcn/UI'],
     liveUrl: '#',
