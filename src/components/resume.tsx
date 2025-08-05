@@ -7,25 +7,34 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const experience = [
   {
-    role: 'Senior Full Stack Developer',
-    company: 'Tech Solutions Inc.',
-    period: 'Jan 2020 - Present',
-    description: 'Lead development of enterprise-level web applications. Architected and implemented microservices, optimized database performance, and mentored junior developers. Key technologies: React, Node.js, Kubernetes, AWS.',
+    role: 'Senior Web Developer',
+    company: 'CyTech International.',
+    period: 'Dec 2025 - Present',
+    description:
+      'Designed and deployed a microservices architecture using Contract-Driven Development (CDD) to ensure reliable service integration. Mentored junior developers through code reviews, pair programming, and architectural discussions. Technologies used: React, Node.js, and RESTful APIs',
   },
   {
-    role: 'Software Engineer',
-    company: 'Innovate Co.',
-    period: 'Jun 2017 - Dec 2019',
-    description: 'Developed and maintained features for a SaaS platform. Worked across the full stack, from UI components in Vue.js to RESTful APIs in Python/Django.',
+    role: 'Jr. Web Developer',
+    company: 'CyTech International',
+    period: 'Feb 2024 - Dec 2024',
+    description:
+      'Contributed to the development of a  SaaS platform. Built responsive UI components using Vue.js and integrated them with backend services developed in Python/Django. Participated in daily standups, code reviews, ',
+  },
+  {
+    role: 'Intern',
+    company: 'CyTech International',
+    period: 'Dec 2023 - Feb 2024',
+    description:
+      'Assisted in developing new features and fixing bugs for a cloud-based SaaS platform. Focused on learning best practices in frontend development with React and gained foundational experience with Python/Django APIs.',
   },
 ];
 
 const education = [
   {
-    degree: 'B.S. in Computer Science',
-    institution: 'University of Technology',
-    period: '2013 - 2017',
-    description: 'Graduated with honors. Focused on algorithms, data structures, and software engineering principles. Active member of the coding club.',
+    degree: 'Bachelor of Science in Information Technology',
+    institution: 'Phinma Cagayan De oro Collage',
+    period: '2020 - 2023',
+    // description: 'Graduated with honors. Focused on algorithms, data structures, and software engineering principles. Active member of the coding club.',
   },
 ];
 
@@ -36,9 +45,9 @@ const skills = [
   { name: 'Node.js / Express', icon: <Code2 className="h-5 w-5 text-primary" /> },
   { name: 'Python / Django', icon: <Code2 className="h-5 w-5 text-primary" /> },
   { name: 'PostgreSQL / MongoDB', icon: <Database className="h-5 w-5 text-primary" /> },
-  { name: 'Docker / Kubernetes', icon: <Cloud className="h-5 w-5 text-primary" /> },
+  // { name: 'Docker / Kubernetes', icon: <Cloud className="h-5 w-5 text-primary" /> },
   { name: 'Tailwind CSS', icon: <Brush className="h-5 w-5 text-primary" /> },
-  { name: 'GenAI Integration', icon: <BrainCircuit className="h-5 w-5 text-primary" /> },
+  // { name: 'GenAI Integration', icon: <BrainCircuit className="h-5 w-5 text-primary" /> },
 ];
 
 export function Resume() {
@@ -86,7 +95,7 @@ export function Resume() {
                       <h3 className="font-semibold text-xl">{edu.degree}</h3>
                       <p className="font-medium text-primary">{edu.institution}</p>
                       <p className="text-sm text-muted-foreground">{edu.period}</p>
-                      <p className="pt-1 text-base">{edu.description}</p>
+                      {/* <p className="pt-1 text-base">{edu.description}</p> */}
                     </div>
                   ))}
                 </div>

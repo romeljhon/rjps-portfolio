@@ -9,7 +9,7 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 export function Contact() {
   const [copied, setCopied] = React.useState(false);
-  const email = 'romeljhonsalvaleon@gmail.com';
+  const email = 'romeljhonsalvaleon27@gmail.com';
   const { ref, inView } = useScrollAnimation();
 
   const handleCopy = () => {
@@ -47,11 +47,11 @@ export function Contact() {
                  </Button>
                </div>
                <div className="space-y-2">
-                 <Link href="https://www.facebook.com/romel.jhon.5/" target="_blank" className="flex items-center gap-3 p-3 rounded-lg hover:bg-accent transition-colors">
+                 <Link href="https://www.facebook.com/romel.jhon.p.salvaleon" target="_blank" className="flex items-center gap-3 p-3 rounded-lg hover:bg-accent transition-colors">
                    <Facebook className="mr-2 h-5 w-5 text-muted-foreground" />
                    <span className="text-sm font-medium hover:text-primary">Facebook</span>
                  </Link>
-                 <Link href="https://www.linkedin.com/in/romel-jhon-salvaleon-1b1b1b1b1/" target="_blank" className="flex items-center gap-3 p-3 rounded-lg hover:bg-accent transition-colors">
+                 <Link href="https://www.linkedin.com/in/romel-jhon-pacala-salvaleon-08765a292/" target="_blank" className="flex items-center gap-3 p-3 rounded-lg hover:bg-accent transition-colors">
                    <Linkedin className="mr-2 h-5 w-5 text-muted-foreground" />
                    <span className="text-sm font-medium hover:text-primary">LinkedIn</span>
                  </Link>
