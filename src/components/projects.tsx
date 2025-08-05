@@ -10,13 +10,13 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce site with a modern frontend, robust backend, and secure payment processing.',
-    image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=600&h=400&fit=crop',
-    dataAiHint: 'commerce website',
+    title: 'Chrono Blog',
+    description: 'A modern blogging platform with a clean interface, allowing users to create, read, and manage their posts seamlessly.',
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=600&h=400&fit=crop',
+    dataAiHint: 'blog writing',
     tags: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
-    liveUrl: '#',
-    sourceUrl: '#',
+    liveUrl: 'https://blog-ebon-three-81.vercel.app/',
+    sourceUrl: 'https://github.com/romeljhon/Blog',
   },
   {
     title: 'Task Management App',
