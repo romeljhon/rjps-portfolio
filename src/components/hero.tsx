@@ -33,7 +33,7 @@ export function Hero() {
             </div>
           </div>
            <Image
-            src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=600&h=600&fit=crop"
+            src="/img/roms.jpeg"
             alt="Hero Portrait"
             width={600}
             height={600}
