@@ -1,7 +1,10 @@
+
+'use client'
 import Link from "next/link"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const blogPosts = [
   {
@@ -31,8 +34,9 @@ const blogPosts = [
 ]
 
 export function Blog() {
+  const { ref, inView } = useScrollAnimation();
   return (
-    <section id="blog" className="w-full py-24 md:py-32 bg-background">
+    <section id="blog" ref={ref} className={`w-full py-24 md:py-32 bg-background transition-opacity duration-1000 ${inView ? 'animate-fade-in-down' : 'opacity-0'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="space-y-4 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Development Blog</h2>

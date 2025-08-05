@@ -1,8 +1,12 @@
+
+'use client'
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const projects = [
   {
@@ -35,8 +39,9 @@ const projects = [
 ];
 
 export function Projects() {
+  const { ref, inView } = useScrollAnimation();
   return (
-    <section id="projects" className="w-full py-24 md:py-32 bg-secondary/50">
+    <section id="projects" ref={ref} className={`w-full py-24 md:py-32 bg-secondary/50 transition-opacity duration-1000 ${inView ? 'animate-fade-in-down' : 'opacity-0'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Featured Projects</h2>

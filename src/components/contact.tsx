@@ -5,10 +5,12 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Mail, Facebook, Linkedin, Copy, Check } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 export function Contact() {
   const [copied, setCopied] = React.useState(false);
   const email = 'romeljhonsalvaleon@gmail.com';
+  const { ref, inView } = useScrollAnimation();
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
@@ -17,7 +19,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full py-24 md:py-32 bg-background">
+    <section id="contact" ref={ref} className={`w-full py-24 md:py-32 bg-background transition-opacity duration-1000 ${inView ? 'animate-fade-in-down' : 'opacity-0'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
