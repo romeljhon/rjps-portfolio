@@ -25,15 +25,9 @@ const Logo = ({ className }: { className?: string }) => (
       strokeLinejoin="round"
       className={className}
     >
-      <defs>
-        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{ stopColor: 'rgb(236, 72, 153)', stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: 'rgb(245, 158, 11)', stopOpacity: 1 }} />
-        </linearGradient>
-      </defs>
-      <rect x="3" y="3" width="18" height="18" rx="4" ry="4" stroke="url(#logoGradient)" />
-      <path d="M10 9l-2 3 2 3" stroke="currentColor" />
-      <path d="M14 15l2-3-2-3" stroke="currentColor" />
+      <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+      <path d="M2 17l10 5 10-5"></path>
+      <path d="M2 12l10 5 10-5"></path>
     </svg>
 );
 
