@@ -32,12 +32,12 @@ export function Hero() {
               </Button>
             </div>
           </div>
-           <Image
-            src="https://images.unsplash.com/photo-1695133698331-53242a453716"
+          <Image
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&h=600&fit=crop"
             alt="Hero Portrait"
             width={600}
             height={600}
-            className="mx-auto aspect-square overflow-hidden rounded-full object-cover sm:w-full"
+            className="mx-auto aspect-square overflow-hidden rounded-full object-cover sm:w-full border-4 border-gray-300"
             data-ai-hint="developer portrait"
             priority
           />
