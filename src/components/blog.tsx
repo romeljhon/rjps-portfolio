@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
-const blogPosts = [
+export const blogPosts = [
   {
     title: "The Power of Server Components in Next.js 14",
     description: "A deep dive into how Next.js Server Components are changing the way we build React applications, improving performance and developer experience.",
     date: "March 15, 2024",
-    slug: "#",
+    slug: "server-components-nextjs-14",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=600&h=400&fit=crop",
     dataAiHint: "server components",
   },
@@ -19,7 +19,7 @@ const blogPosts = [
     title: "Styling with Tailwind CSS: A Practical Guide",
     description: "Discover utility-first CSS and how Tailwind can dramatically speed up your styling workflow while maintaining a consistent design system.",
     date: "February 28, 2024",
-    slug: "#",
+    slug: "styling-with-tailwind-css",
     image: "https://images.unsplash.com/photo-1555099962-4199c345e546?q=80&w=600&h=400&fit=crop",
     dataAiHint: "abstract design",
   },
@@ -27,7 +27,7 @@ const blogPosts = [
     title: "Getting Started with Generative AI in Web Apps",
     description: "An introduction to integrating large language models (LLMs) into your web projects using modern frameworks and APIs.",
     date: "January 10, 2024",
-    slug: "#",
+    slug: "getting-started-generative-ai",
     image: "https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=600&h=400&fit=crop",
     dataAiHint: "artificial intelligence",
   },
@@ -48,7 +48,7 @@ export function Blog() {
           {blogPosts.map((post) => (
             <Card key={post.title} className="group flex flex-col h-full overflow-hidden rounded-lg transition-all duration-300 hover:shadow-xl bg-card border">
                 <CardHeader className="p-0">
-                  <Link href={post.slug} className="block overflow-hidden">
+                  <Link href={`/blog/${post.slug}`} className="block overflow-hidden">
                     <Image
                       src={post.image}
                       width={600}
@@ -62,13 +62,13 @@ export function Blog() {
                 <CardContent className="p-6 space-y-2 flex-grow">
                   <p className="text-sm text-muted-foreground">{post.date}</p>
                   <CardTitle className="text-xl font-bold leading-snug group-hover:text-primary transition-colors">
-                    <Link href={post.slug}>{post.title}</Link>
+                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </CardTitle>
                   <CardDescription className="pt-2">{post.description}</CardDescription>
                 </CardContent>
                 <CardFooter className="p-6 pt-0">
                     <Button asChild variant="link" className="p-0 h-auto font-semibold">
-                        <Link href={post.slug}>Read More &rarr;</Link>
+                        <Link href={`/blog/${post.slug}`}>Read More &rarr;</Link>
                     </Button>
                 </CardFooter>
             </Card>
