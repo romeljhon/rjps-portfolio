@@ -7,48 +7,93 @@ import Image from "next/image"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { blogPosts } from "@/lib/blog-data"
 
+import { motion } from 'framer-motion';
+
 export function Blog() {
-  const { ref, inView } = useScrollAnimation();
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
-    <section id="blog" ref={ref} className={`w-full py-24 md:py-32 bg-background transition-opacity duration-1000 ${inView ? 'animate-fade-in-down' : 'opacity-0'}`}>
+    <section id="blog" className="w-full py-32">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Development Blog</h2>
-            <p className="max-w-[900px] mx-auto text-muted-foreground md:text-xl/relaxed">
-              Sharing my thoughts on technology, web development, and everything in between.
-            </p>
-        </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="space-y-4 text-center mb-16"
+        >
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+            Latest <span className="text-gradient">Insights</span>
+          </h2>
+          <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
+            Exploring the frontiers of web development and design through my personal lens.
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {blogPosts.map((post) => (
-            <Card key={post.title} className="group flex flex-col h-full overflow-hidden rounded-lg transition-all duration-300 hover:shadow-xl bg-card border">
-                <CardHeader className="p-0">
-                  <Link href={`/blog/${post.slug}`} className="block overflow-hidden">
+            <motion.div key={post.title} variants={itemVariants}>
+              <Card className="group flex flex-col h-full glass-card overflow-hidden border-white/5 hover:translate-y-[-8px] transition-all duration-500">
+                <CardHeader className="p-0 relative aspect-[16/10] overflow-hidden">
+                  <Link href={`/blog/${post.slug}`} className="block w-full h-full">
                     <Image
                       src={post.image}
-                      width={600}
-                      height={400}
+                      fill
                       alt={post.title}
-                      className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      data-ai-hint={post.dataAiHint}
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
+                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background to-transparent opacity-60" />
                   </Link>
                 </CardHeader>
-                <CardContent className="p-6 space-y-2 flex-grow">
-                  <p className="text-sm text-muted-foreground">{post.date}</p>
-                  <CardTitle className="text-xl font-bold leading-snug group-hover:text-primary transition-colors">
+                <CardContent className="p-6 space-y-3 flex-grow">
+                  <div className="flex items-center gap-3 text-xs text-primary font-semibold uppercase tracking-widest">
+                    <span className="w-8 h-[1px] bg-primary/30" />
+                    {post.date}
+                  </div>
+                  <CardTitle className="text-xl font-bold leading-tight group-hover:text-primary transition-colors">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </CardTitle>
-                  <CardDescription className="pt-2">{post.description}</CardDescription>
+                  <CardDescription className="text-muted-foreground line-clamp-2 leading-relaxed">
+                    {post.description}
+                  </CardDescription>
                 </CardContent>
                 <CardFooter className="p-6 pt-0">
-                    <Button asChild variant="link" className="p-0 h-auto font-semibold">
-                        <Link href={`/blog/${post.slug}`}>Read More &rarr;</Link>
-                    </Button>
+                  <Button asChild variant="link" className="p-0 h-auto font-bold text-primary group-hover:translate-x-2 transition-transform">
+                    <Link href={`/blog/${post.slug}`} className="flex items-center gap-2">
+                      Read Entire Post <span className="text-lg">→</span>
+                    </Link>
+                  </Button>
                 </CardFooter>
-            </Card>
+              </Card>
+            </motion.div>
           ))}
+        </motion.div>
+
+        <div className="mt-20 text-center">
+          <Button asChild size="lg" variant="outline" className="rounded-full glass border-white/10 px-10">
+            <Link href="/blog">View All Articles</Link>
+          </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }
