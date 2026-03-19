@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { ThemeToggle } from './theme-toggle';
 
 const navLinks = [
   { href: '#projects', label: 'Projects' },
@@ -73,8 +72,6 @@ export function LandingHeader() {
               {link.label}
             </Link>
           ))}
-          <div className="w-[1px] h-4 bg-white/10 mx-2" />
-          <ThemeToggle />
         </nav>
         <div className="flex items-center gap-2">
           <Button variant="outline" className="hidden md:flex rounded-full border-primary/50 hover:bg-primary/10" asChild>
@@ -105,10 +102,6 @@ export function LandingHeader() {
                     </Link>
                   ))}
                 </nav>
-                <div className="flex items-center justify-between pt-4">
-                  <span className="text-sm text-muted-foreground">Dark Mode</span>
-                  <ThemeToggle />
-                </div>
               </div>
             </SheetContent>
           </Sheet>

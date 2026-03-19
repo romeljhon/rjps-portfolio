@@ -1,8 +1,10 @@
 
 'use client'
 
-import { Briefcase, GraduationCap, Code2, Database, Brush } from 'lucide-react';
+import { Briefcase, GraduationCap, Code2, Database, Brush, Sparkles, Flame, CreditCard, Zap, Download, FileCode, GitBranch } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
+import Link from 'next/link';
 
 const experience = [
   {
@@ -37,13 +39,17 @@ const education = [
 ];
 
 const skills = [
-  { name: 'JavaScript (ES6+)', icon: <Code2 className="h-5 w-5 text-primary" /> },
-  { name: 'TypeScript', icon: <Code2 className="h-5 w-5 text-primary" /> },
   { name: 'React / Next.js', icon: <Code2 className="h-5 w-5 text-primary" /> },
-  { name: 'Node.js / Express', icon: <Code2 className="h-5 w-5 text-primary" /> },
+  { name: 'TypeScript', icon: <Code2 className="h-5 w-5 text-primary" /> },
   { name: 'Python / Django', icon: <Code2 className="h-5 w-5 text-primary" /> },
-  { name: 'PostgreSQL / MongoDB', icon: <Database className="h-5 w-5 text-primary" /> },
-  { name: 'Tailwind CSS', icon: <Brush className="h-5 w-5 text-primary" /> },
+  { name: 'GenAI & LLMs', icon: <Sparkles className="h-5 w-5 text-primary" /> },
+  { name: 'HTML5 & CSS3', icon: <FileCode className="h-5 w-5 text-primary" /> },
+  { name: 'Firebase & Real-time', icon: <Flame className="h-5 w-5 text-primary" /> },
+  { name: 'PostgreSQL / SQL', icon: <Database className="h-5 w-5 text-primary" /> },
+  { name: 'Stripe & Fintech', icon: <CreditCard className="h-5 w-5 text-primary" /> },
+  { name: 'Tailwind & Shadcn', icon: <Brush className="h-5 w-5 text-primary" /> },
+  { name: 'Git & Collaboration', icon: <GitBranch className="h-5 w-5 text-primary" /> },
+  { name: 'Framer & Animation', icon: <Zap className="h-5 w-5 text-primary" /> },
 ];
 
 import { motion } from 'framer-motion';
@@ -80,6 +86,19 @@ export function Resume() {
           <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
             Professional experience, education, and the skills I&apos;ve mastered along the way.
           </p>
+          <div className="pt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <Button asChild variant="outline" size="lg" className="rounded-2xl glass border-primary/20 hover:bg-primary/10 group transition-all duration-300">
+              <a href="/cv.pdf" download className="flex items-center gap-2">
+                <Download className="h-5 w-5 group-hover:translate-y-1 transition-transform" />
+                Download CV
+              </a>
+            </Button>
+            <Button asChild variant="ghost" size="lg" className="rounded-2xl border border-white/5 hover:border-primary/20 transition-all duration-300">
+              <Link href="/cv" className="flex items-center gap-2">
+                Generate CV <span className="text-xl">↗</span>
+              </Link>
+            </Button>
+          </div>
         </motion.div>
 
         <div className="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-12">

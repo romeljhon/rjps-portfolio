@@ -14,32 +14,10 @@ export function Hero() {
   return (
     <section id="home" className="relative w-full min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 z-10">
-        <div className="flex flex-col items-center text-center space-y-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative"
-          >
-            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-b from-primary/50 to-transparent shadow-2xl">
-              <div className="w-full h-full rounded-full overflow-hidden border-2 border-background/50 relative">
-                <Image
-                  src="/img/developer.png"
-                  alt="Developer"
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-110"
-                  priority
-                />
-              </div>
-              <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-background rounded-full flex items-center justify-center border border-white/10 shadow-xl">
-                <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center animate-pulse">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                </div>
-              </div>
-            </div>
-          </motion.div>
+        <div key="hero-main" className="flex flex-col items-center text-center space-y-12">
 
           <motion.div
+            key="hero-status"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}

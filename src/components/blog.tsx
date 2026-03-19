@@ -8,6 +8,8 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { blogPosts } from "@/lib/blog-data"
 
 import { motion } from 'framer-motion';
+ 
+const RESPONSIVE_SIZES = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw";
 
 export function Blog() {
   const containerVariants = {
@@ -54,10 +56,12 @@ export function Blog() {
             <motion.div key={post.title} variants={itemVariants}>
               <Card className="group flex flex-col h-full glass-card overflow-hidden border-white/5 hover:translate-y-[-8px] transition-all duration-500">
                 <CardHeader className="p-0 relative aspect-[16/10] overflow-hidden">
-                  <Link href={`/blog/${post.slug}`} className="block w-full h-full">
+                  <Link href={`/blog/${post.slug}`} className="block w-full h-full relative">
                     <Image
+                      sizes={RESPONSIVE_SIZES}
                       src={post.image}
                       fill
+                      priority={blogPosts.indexOf(post) === 0}
                       alt={post.title}
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
