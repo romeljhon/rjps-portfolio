@@ -1,16 +1,23 @@
 
 'use client'
 
-import { Briefcase, GraduationCap, Code2, Database, Brush, Sparkles, Flame, CreditCard, Zap, Download, FileCode, GitBranch } from 'lucide-react';
+import * as React from 'react';
+import { Briefcase, GraduationCap, Code2, Database, Brush, Sparkles, Flame, CreditCard, Zap, Download, FileCode, GitBranch, Layers, Webhook, Palette } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import Link from 'next/link';
 
 const experience = [
   {
+    role: 'Interim Manager & Technical Lead',
+    company: 'CyTech International.',
+    period: 'Nov 2025 - Present',
+    description:
+      'Orchestrating cross-functional development teams to deliver high-priority enterprise solutions. Developing strategic technical roadmaps and advising executive leadership on long-term architectural scaling and operational efficiency.',
+  },
+  {
     role: 'Senior Web Developer',
     company: 'CyTech International.',
-    period: 'Dec 2025 - Present',
+    period: 'Dec 2024 - Present',
     description:
       'Led the architecture and development of a scalable e-commerce platform using a microservices-based approach with Node.js and React. Optimized application performance, reducing page load times by 40% through code splitting and server-side rendering. Mentored a team of four junior developers, fostering their growth in modern web technologies and best practices.',
   },
@@ -50,11 +57,20 @@ const skills = [
   { name: 'Tailwind & Shadcn', icon: <Brush className="h-5 w-5 text-primary" /> },
   { name: 'Git & Collaboration', icon: <GitBranch className="h-5 w-5 text-primary" /> },
   { name: 'Framer & Animation', icon: <Zap className="h-5 w-5 text-primary" /> },
+  { name: 'Docker & Cloud', icon: <Layers className="h-5 w-5 text-primary" /> },
+  { name: 'API Architecture', icon: <Webhook className="h-5 w-5 text-primary" /> },
+  { name: 'UI / UX Design', icon: <Palette className="h-5 w-5 text-primary" /> },
 ];
 
 import { motion } from 'framer-motion';
 
 export function Resume() {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -69,6 +85,10 @@ export function Resume() {
     hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0 }
   };
+
+  if (!mounted) {
+    return <section id="resume" className="w-full py-32" />;
+  }
 
   return (
     <section id="resume" className="w-full py-32">
@@ -87,15 +107,15 @@ export function Resume() {
             Professional experience, education, and the skills I&apos;ve mastered along the way.
           </p>
           <div className="pt-8 flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild variant="outline" size="lg" className="rounded-2xl glass border-primary/20 hover:bg-primary/10 group transition-all duration-300">
-              <a href="/cv.pdf" download className="flex items-center gap-2">
-                <Download className="h-5 w-5 group-hover:translate-y-1 transition-transform" />
-                Download CV
-              </a>
-            </Button>
-            <Button asChild variant="ghost" size="lg" className="rounded-2xl border border-white/5 hover:border-primary/20 transition-all duration-300">
+            <Button asChild size="lg" className="rounded-2xl bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 group transition-all duration-300">
               <Link href="/cv" className="flex items-center gap-2">
-                Generate CV <span className="text-xl">↗</span>
+                <Download className="h-5 w-5 group-hover:translate-y-1 transition-transform" />
+                Export as PDF
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="rounded-2xl border border-white/5 hover:border-primary/20 transition-all duration-300">
+              <Link href="/cv" className="flex items-center gap-2">
+                Review Full CV <span className="text-xl">↗</span>
               </Link>
             </Button>
           </div>

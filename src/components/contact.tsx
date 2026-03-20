@@ -10,14 +10,23 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 
 export function Contact() {
+  const [mounted, setMounted] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
-  const email = 'romeljhonsalvaleon27@gmail.com';
+  const email = 'pajojhon@gmail.com';
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  if (!mounted) {
+    return <section id="contact" className="w-full py-32" />;
+  }
 
   return (
     <section id="contact" className="w-full py-32">

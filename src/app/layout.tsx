@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
       <body className={`${spaceGrotesk.variable} ${inter.variable} font-sans antialiased text-foreground selection:bg-primary/20`}>
           <div key="root-layout-wrapper" className="relative w-full h-full min-h-screen overflow-x-hidden">
-            <div className="fixed inset-0 z-0 pointer-events-none opacity-60">
+            <div className="fixed inset-0 z-0 pointer-events-none opacity-60 print:hidden">
               <Particles
                 particleColors={["#ffffff"]}
                 particleCount={300}
@@ -40,7 +40,7 @@ export default function RootLayout({
                 pixelRatio={2}
               />
             </div>
-            <div className="noise" />
+            <div className="noise print:hidden" />
             <div className="relative z-10 w-full">
               {children}
             </div>

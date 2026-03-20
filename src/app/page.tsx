@@ -1,11 +1,15 @@
+
+'use client'
+import dynamic from 'next/dynamic';
 import { LandingHeader } from '@/components/landing-header';
 import { Hero } from '@/components/hero';
 import { Services } from '@/components/services';
-import { Projects } from '@/components/projects';
-import { Resume } from '@/components/resume';
 import { Blog } from '@/components/blog';
-import { Contact } from '@/components/contact';
 import { Footer } from '@/components/footer';
+
+const ProjectGallery = dynamic(() => import('@/components/gallery'), { ssr: false });
+const Resume = dynamic(() => import('@/components/resume').then(mod => mod.Resume), { ssr: false });
+const Contact = dynamic(() => import('@/components/contact').then(mod => mod.Contact), { ssr: false });
 
 export default function Home() {
   return (
@@ -14,7 +18,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Services />
-        <Projects />
+        <ProjectGallery />
         <Resume />
         <Blog />
         <Contact />
